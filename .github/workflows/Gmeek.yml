@@ -48,6 +48,8 @@ jobs:
 
       - name: Generate new html
         run: |
+          sudo mkdir -p /opt/Gmeek/backup
+          sudo mkdir -p /opt/Gmeek/docs
           cp -r ./* /opt/Gmeek/
           cd /opt/Gmeek/
           python Gmeek.py ${{ secrets.GITHUB_TOKEN }} ${{ github.repository }} --issue_number '${{ github.event.issue.number }}'
