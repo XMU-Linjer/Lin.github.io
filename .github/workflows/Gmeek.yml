@@ -48,8 +48,10 @@ jobs:
 
       - name: Generate new html
         run: |
+        # 创建必要目录（确保存在）
           sudo mkdir -p /opt/Gmeek/backup
           sudo mkdir -p /opt/Gmeek/docs
+          sudo chmod -R 777 /opt/Gmeek  # 确保写入权限
           cp -r ./* /opt/Gmeek/
           cd /opt/Gmeek/
           python Gmeek.py ${{ secrets.GITHUB_TOKEN }} ${{ github.repository }} --issue_number '${{ github.event.issue.number }}'
