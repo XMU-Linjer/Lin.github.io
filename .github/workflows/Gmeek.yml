@@ -48,7 +48,7 @@ jobs:
 
       - name: Generate new html
         run: |
-        # 创建必要目录（确保存在）
+          # 创建必要目录（确保存在）
           sudo mkdir -p /opt/Gmeek/backup
           sudo mkdir -p /opt/Gmeek/docs
           sudo chmod -R 777 /opt/Gmeek  # 确保写入权限
